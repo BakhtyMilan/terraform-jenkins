@@ -7,7 +7,7 @@ pipeline {
     stage('S3 - create bucket'){
       steps{
         script{
-          getTerraformPath('cloudiarterraform')
+          createS3Bucket('cloudiarterraform')
         }
       }
     }
