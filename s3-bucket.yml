@@ -1,7 +1,11 @@
-# ---
-# - hosts: localhost
-#   tasks:
-#   - name: Create S3 bucket
-#     s3_bucket:
-#       name: cloudiarkops
-#       state: present
+---
+- hosts: localhost
+  tasks:
+  - name: Install boto3
+    pip:
+      name: boto3
+      state: present
+  - name: Create S3 bucket
+    s3_bucket:
+      name: cloudiartest
+      state: present
